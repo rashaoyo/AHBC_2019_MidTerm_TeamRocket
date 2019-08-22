@@ -18,7 +18,6 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
         public void Run()
         {
 
-
             Console.WriteLine("Welcome to '@void', your number one stop for the latest in digiatl fashion! \nSelecet below from the following options:\n");
             Console.WriteLine("[1] Shop \n[2] About \n[3] Exit");
 
