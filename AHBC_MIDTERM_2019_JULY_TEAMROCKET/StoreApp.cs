@@ -12,6 +12,8 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
         bool isValid;
         int startMenuChoice = 0;
         string initalUserInput = "";
+        
+
 
 
 
@@ -27,14 +29,14 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
             {
                 do
                 {
-                    if (intergerValidator.Validate(initalUserInput))
+                    if (IntegerValidator.Validate(initalUserInput))
                     {
                         startMenuChoice = int.Parse(initalUserInput);
                         isValid = true;
                     }
                     else
                     {
-
+                        Console.Clear();
                         menuOptions();
                         initalUserInput = Console.ReadLine();
 
@@ -49,8 +51,7 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
                 {
                     case 1:
 
-                        // Run Shopping App
-                        // gives back the repeat value too
+                        
                         break;
 
                     case 2:

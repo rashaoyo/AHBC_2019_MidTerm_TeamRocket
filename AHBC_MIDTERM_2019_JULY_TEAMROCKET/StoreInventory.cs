@@ -7,6 +7,8 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
     public class StoreInventory 
     {
         public List<StoreItem> TotalStoreInventory { get; set; }
+
+        
         public List<StoreItem> GenerateStoreInventory()
         {
             List<StoreItem> StoreInventory = new List<StoreItem>();  //creating list to store and return the store inventory
@@ -25,7 +27,7 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
                     break;
                 }
             }
-            return StoreInventory; //return the store inventory
+            return StoreInventory;
         }
 
 
