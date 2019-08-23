@@ -8,9 +8,8 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
     {
         string initialUserInput = "";
         bool isValid, isNotMenuChoice;
-        IntegerValidator intergerValidator = new IntegerValidator();
         int startMenuChoice;
-
+     
 
         public void Run()
         {
@@ -24,14 +23,14 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
             {
                 do
                 {
-                    if (intergerValidator.Validate(initialUserInput))
+                    if (IntegerValidator.Validate(initialUserInput))
                     {
                         startMenuChoice = int.Parse(initialUserInput);
                         isValid = true;
                     }
                     else
                     {
-
+                        Console.Clear();
                         menuOptions();
                         initialUserInput = Console.ReadLine();
 
@@ -44,8 +43,8 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
 
                 if (startMenuChoice > 0 && startMenuChoice < 5)
                 {
-
-                    //categoryselector( );
+                    CategorySelectionApp selections = new CategorySelectionApp(startMenuChoice);
+                    selections.categorySelector();
                     isNotMenuChoice = false;
                     
                 }

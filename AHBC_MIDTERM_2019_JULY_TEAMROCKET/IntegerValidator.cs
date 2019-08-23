@@ -9,7 +9,7 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
         private string _inputString { get; set; }
         private bool _outputInt { get; set; }
 
-        public bool Validate(string intInQuestion)
+        public static bool Validate(string intInQuestion)
 
         {
             bool temp = int.TryParse(intInQuestion, out int result);
