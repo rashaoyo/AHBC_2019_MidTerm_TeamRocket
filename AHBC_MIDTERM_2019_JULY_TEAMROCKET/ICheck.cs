@@ -1,8 +1,8 @@
 ﻿namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
 {
-    internal interface ICheck
+    public interface ICheck
     {
-        void PayWithCheck(double total);
+        void PayWithCheck(string total);
 
     }
 }
