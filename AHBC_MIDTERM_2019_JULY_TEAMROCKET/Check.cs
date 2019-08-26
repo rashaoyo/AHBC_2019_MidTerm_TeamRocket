@@ -7,6 +7,9 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
 {
     class Check : PaymentTypeBase
     {
+        public string AccountNumber { get; set; }
+        public string RoutingNumber { get; set; }
+
         public override void MakeAPayment()
         {
         }

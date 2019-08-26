@@ -7,8 +7,12 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
 {
     class CreditCard: PaymentTypeBase
     {
+        public string CardType { get; set; }
+        public string CardNumber { get; set; }
+        public string ExpirationDate { get; set; }
+        public string CVVCode { get; set; }
 
-            public override void MakeAPayment()
+        public override void MakeAPayment()
             {
             }
 
@@ -56,29 +60,22 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
                         }
                         else if (result == CardTypes.AMEX)
                         {
-                            Console.WriteLine("\nCard:");
-                            string cardNum = ValidateCardNumber2(Console.ReadLine());
-                            bool isValid = true;
 
-                            if (isValid)
-                            {
-                                Console.WriteLine("\nExpiration Date (MM/YY) or (MM/YYYY):");
-                                string expDate = ValidateExpDate(Console.ReadLine());
+                        Console.WriteLine("\nCard:");
+                        string cardNum = ValidateCardNumber2(Console.ReadLine());
 
-                                if (isValid)
-                                {
-                                    Console.WriteLine("\nCVV:");
-                                    string cvvNum = ValidateCVVCode2(Console.ReadLine());
 
-                                    if (isValid)
-                                    {
-                                        Console.WriteLine("Your transaction has been processed.");
-                                        break;
-                                    }
-                                }
+                        Console.WriteLine("\nExpiration Date (MM/YY) or (MM/YYYY):");
+                        string expDate = ValidateExpDate(Console.ReadLine());
 
-                            }
-                        }
+
+                        Console.WriteLine("\nCVV:");
+                        string cvvNum = ValidateCVVCode2(Console.ReadLine());
+
+
+                        Console.WriteLine("Your transaction has been processed.");
+                        break;
+                    }
                         else
                         {
                             Console.WriteLine("This is not a valid card type. Please try again.");
@@ -86,16 +83,6 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
                         }
                     }
 
-
-
-                    //Console.WriteLine("\nExpiration Date (MM/YY) or (MM/YYYY):");
-
-                    //string expDate = ValidateExpDate(Console.ReadLine());
-
-                    //Console.WriteLine("\nCVV:");
-                    //string cvvNum = ValidateCVVCode1(Console.ReadLine());
-
-                    //Console.WriteLine("Your transaction has been processed.");
                 }
 
             }
