@@ -4,47 +4,54 @@ using System.Text;
 
 namespace Payments
 {
-    public class Payment : IPaymentMethod
+    public abstract class Payment : IPayment
     {
-        public double SubTotal { get; set; }
-        public double SalesTaxTotal { get; set; }
-        public double GrandTotal { get; set; }
-        public object PaymentType { get; private set; }
+        //public double SubTotal { get; set; }
+        //public double SalesTaxTotal { get; set; }
+        //public double GrandTotal { get; set; }
+        //public object PaymentType { get; private set; }
+        public string Total { get; set; }
 
-        double taxRate = 0.06;
+        //public const double taxRate = 0.06;
 
-        public Payment()
+
+        public void Pay (string total)
         {
-            SubTotal = subTotal;
-            SalesTaxTotal = salesTaxTotal;
-            GrandTotal = grandTotal;
-            PaymentType = paymentType;
+
         }
 
-        private double SubTotal()
-        {
-            // subtotal = item price * the qty of items
-            subTotal = itemPrice * itemQuantity;
-            // you would want this to return the subtotal
+        //public Payment()
+        //{
+        //    //SubTotal = subTotal;
+        //    SalesTaxTotal = salesTaxTotal;
+        //    GrandTotal = grandTotal;
+        //    PaymentType = paymentType;
+        //}
 
-            return subTotal;
-        }
+        //private double SubTotal()
+        //{
+        //    // subtotal = item price * the qty of items
+        //    subTotal = itemPrice * itemQuantity;
+        //    // you would want this to return the subtotal
 
-        private double SalesTaxTotal()
-        {
-            //sales tax total = subtotal * the taxrate of 6%
-            salesTaxTotal = subTotal * taxRate;
-            return salesTaxTotal;
-        }
+        //    return subTotal;
+        //}
 
-        private double GrandTotal()
-        {
-            // grand total = subtotal + tax total
-            grandTotal = subTotal + salesTaxTotal;
-            return grandTotal;
-        }
+        //private double SalesTaxTotal()
+        //{
+        //    //sales tax total = subtotal * the taxrate of 6%
+        //    salesTaxTotal = subTotal * taxRate;
+        //    return salesTaxTotal;
+        //}
 
-        public void MethodOfPayment()
+        //private double GrandTotal()
+        //{
+        //    // grand total = subtotal + tax total
+        //    grandTotal = subTotal + salesTaxTotal;
+        //    return grandTotal;
+        //}
+
+        public void MethodOfPayment(string total)
         {
             while (true)
             {
@@ -52,15 +59,15 @@ namespace Payments
                 switch (paymentType)
                 {
                     case 1:
-                        PayCash();
+                        PayWithCash();
                         return;
 
                     case 2:
-                        PayCheck();
+                        PayWithCheck();
                         return;
 
                     case 3:
-                        PayCreditCard();
+                        PayWithCreditCard();
                         return;
 
                     default:
@@ -75,5 +82,10 @@ namespace Payments
         //{
         //** if we decide to do non-taxable items.. maybe rename this method??
         //}
+    }
+
+    public interface IPayment
+    {
+
     }
 }
