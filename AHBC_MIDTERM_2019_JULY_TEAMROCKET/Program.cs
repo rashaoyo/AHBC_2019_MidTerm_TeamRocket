@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
 {
@@ -8,12 +7,14 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
         static void Main(string[] args)
         {
 
-            ShoppingMenu test = new ShoppingMenu();
+            //StoreApp tester = new StoreApp();
+            //tester.Run();
 
-            test.Run();
+            ShoppingMenu tst = new ShoppingMenu();
+            tst.Run();
 
         }
 
-
+        
     }
 }
