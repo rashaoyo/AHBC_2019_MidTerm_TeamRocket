@@ -4,11 +4,12 @@ using System.Text;
 
 namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
 {
-    public class Cash : IPayment
+    public class Cash : IPaymentMethod
     {
         private void Pay()
         {
-            double cashGiven, amountTendered, totalOrderAmount;
+            double cashGiven, amountTendered, totalOrderAmount=0;
+
             cashGiven = CashReceived();
             Console.WriteLine("");
             while (cashGiven < totalOrderAmount)
@@ -27,7 +28,7 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
         {
             while (true)
             {
-                if (double.TryParse(Console.ReadLine(), out double cashResult)
+                if (double.TryParse(Console.ReadLine(), out double cashResult))
                 {
                     return cashResult;
                 }

@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
 {
-    public class CreditCard : IPayment
+    public class CreditCard : IPaymentMethod
     {
         public string CardType { get; set; }
         public string CardNumber { get; set; }

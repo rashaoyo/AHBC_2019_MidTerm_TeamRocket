@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -13,6 +14,7 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
         public int ItemQuantity { get; set; }
         public double ItemPrice { get; set; }
 
+        
         //function to read text file
         public List<string> FileReader() //returns entire file in a list
         {
@@ -30,6 +32,8 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
             }
             return linesOfTextFile;  //returning the completed list whole text file has been read and stored
         }
+
+      
 
         public StoreItem ReturnStoreItem(string itemLine)  //passing in a line from the list to create an item with
         {
@@ -61,5 +65,6 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
             return itemCreator;
         }
 
+       
     }
 }

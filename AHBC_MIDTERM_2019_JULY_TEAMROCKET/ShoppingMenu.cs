@@ -7,21 +7,38 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
 {
     class ShoppingMenu
     {
-        string initialUserInput = "";
-        bool isValid, isNotMenuChoice;
-        int startMenuChoice;
-        
+        private static string initialUserInput = "";
+        private static bool isValid, isNotMenuChoice;
+        private static int startMenuChoice;
+        public static List<string> categories = new List<string> { };
 
-
-        public void Run()
+        public enum MyEnum
         {
+
+
+
+        }
+
+        public static void RunShoppingMenu(StoreInventory currentInventory, ShoppingCart userCart)
+        {
+
             char loopBreaker;
             do
             {
+               
+                categories.Clear();
+
+                foreach (var item in currentInventory)
+                {
+                    if (!categories.Contains(item.ItemCategory))
+                    {
+                        categories.Add(item.ItemCategory);
+                    }
+
+                }
                 menuOptions();
-
-
                 initialUserInput = Console.ReadLine();
+                Console.WriteLine();
 
                 do
                 {
@@ -41,17 +58,14 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
                             isValid = false;
                         }
 
-
                     } while (!isValid);
 
 
-                    if (startMenuChoice > 0 && startMenuChoice < 5)
+                    if (startMenuChoice > 0 && startMenuChoice <= categories.Count )
                     {
-                        
 
-
-                        CategorySelectionApp selections = new CategorySelectionApp(startMenuChoice);
-                        selections.categorySelector();
+                        CategorySelectionApp selections = new CategorySelectionApp(startMenuChoice, categories);
+                        selections.categorySelector(currentInventory, userCart);
                         isNotMenuChoice = false;
 
 
@@ -74,23 +88,26 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
                 Console.WriteLine("Do you wish to continue adding items to your cart (enter y/n): "); //ask user to if they want to continue
                 loopBreaker = IsValidLoopBreaker(Console.ReadLine()); //storing answer and if it's valid input 
 
-                Console.Read();
 
             } while (loopBreaker == 'y');
 
-
-
-
         }
 
 
-        public void menuOptions()
+        private static void menuOptions()
         {
             Console.WriteLine("Please selecet for the following categories:\n");
-            Console.WriteLine("[1] Clothiging\n[2] Accessories\n[3] Shoes\n[4] Outerwear\n");
+            int i = 1;
+            foreach (var item in categories)
+            {
+                Console.WriteLine($"[{i}] {item}\r");
+                i++;
+            }
+
+            //Console.WriteLine("[1] Clothiging\n[2] Accessories\n[3] Shoes\n[4] Outerwear\n");
 
         }
-        public static char IsValidLoopBreaker(string testChar)
+        private static char IsValidLoopBreaker(string testChar)
         {
             bool isInvalidChar = true;
 
