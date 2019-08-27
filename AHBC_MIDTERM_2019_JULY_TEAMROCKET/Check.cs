@@ -1,42 +1,84 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
 
 namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
 {
-    class Check : Payment
+    
+    public class Check : IPayment
     {
-        // Check #
-        // checking # consists of the following
-        // routing number: 9 digits
-        // checking number: 10-12 digits
+        public string AccountNumber { get; set; }
+        public string RoutingNumber { get; set; }
 
-        private void PayCheck()
+        public override void MakeAPayment()
         {
-            bool isNumberValid;
-            double routingNumber;
-            double checkingAccountNumber;
-
-            while ()
-            {
-                // add this into the validation class that victoria is adding in later.
-                Console.WriteLine(/*"maybe here we would ask them whether "*/);
-                string verifyRoutingNumber
-                    = @"^whatever the regex is for checking the routing number";
-                Regex rg = new Regex(verifyRoutingNumber);
-
-                string verifyAccountNumber
-                    = @"^whatever the regex is for checking the routing number";
-                Regex rg = new Regex(verifyAccountNumber);
-
-                routingNumber = 0;
+        }
 
 
-            }
+        public new void PayWithCheck(string total)
+        {
+            Console.WriteLine($"Total: {total}\n"); //might not need based on how user interface is set up
 
+            Console.WriteLine("Check Number:\n");     //validation
+            string checkNum = ValidateCheckNumber(Console.ReadLine());
+
+            Console.WriteLine("Routing Number:\n");     //validation
+            string routeNum = ValidateRouteNumber(Console.ReadLine());
+
+            Console.WriteLine("Your transaction has been processed.");
 
         }
 
-    }
-}
+        private string ValidateRouteNumber(string routeNum)
+        {
+            Regex rgx = new Regex(@"^(\w[0-9]{8})$");
+
+            if (rgx.IsMatch(routeNum))
+            {
+                return routeNum;
+            }
+            else
+            {
+                do
+                {
+
+
+                    Console.WriteLine("This is not a valid routing number. Please re-enter.");
+                    Console.WriteLine("\nRouting Number:");
+                    routeNum = (Console.ReadLine());
+
+                }
+                while (!rgx.IsMatch(routeNum));
+
+                return routeNum;
+
+            }
+        }
+
+        private string ValidateCheckNumber(string checkNum)
+        {
+            Regex rgx = new Regex(@"^(\w[0-9]{9,11})$");
+
+            if (rgx.IsMatch(checkNum))
+            {
+                return checkNum;
+            }
+            else
+            {
+                do
+                {
+
+
+                    Console.WriteLine("This is not a valid check number. Please re-enter.");
+                    Console.WriteLine("\nCheck Number:");
+                    checkNum = (Console.ReadLine());
+
+                }
+                while (!rgx.IsMatch(checkNum));
+
+                return checkNum;
+
+            }
+
+        }

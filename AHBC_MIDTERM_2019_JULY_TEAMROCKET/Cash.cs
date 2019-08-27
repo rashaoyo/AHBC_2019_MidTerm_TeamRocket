@@ -1,15 +1,12 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
 {
-    public class Cash : Payment
+public class Cash : IPayment
     {
-
-    }
-
-    private void PayCash()
+  private void PayCash()
     {
         double cashGiven, amountTendered, totalOrderAmount;
         cashGiven = CashReceived();
@@ -38,3 +35,9 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
         }
     }
 }
+    
+
+    
+    
+
+
