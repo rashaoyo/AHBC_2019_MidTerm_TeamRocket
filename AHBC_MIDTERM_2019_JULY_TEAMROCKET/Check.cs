@@ -1,11 +1,12 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
 
 namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
 {
-    class Check : PaymentTypeBase
+    
+    public class Check : IPayment
     {
         public string AccountNumber { get; set; }
         public string RoutingNumber { get; set; }
@@ -81,5 +82,3 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
             }
 
         }
-    }
-}

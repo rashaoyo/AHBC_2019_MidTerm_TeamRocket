@@ -1,11 +1,11 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
 
 namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
 {
-    class CreditCard: PaymentTypeBase
+    public class CreditCard: IPayment
     {
         public string CardType { get; set; }
         public string CardNumber { get; set; }
@@ -221,6 +221,4 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
 
 
 
-    }
-
-
+  
