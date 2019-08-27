@@ -1,21 +1,18 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
 
 namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
 {
-    class Check : PaymentTypeBase
+
+    public class Check : IPayment
     {
         public string AccountNumber { get; set; }
         public string RoutingNumber { get; set; }
 
-        public override void MakeAPayment()
-        {
-        }
 
-
-        public new void PayWithCheck(string total)
+        public new void Pay(string total)
         {
             Console.WriteLine($"Total: {total}\n"); //might not need based on how user interface is set up
 
@@ -81,5 +78,7 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
             }
 
         }
+
     }
+
 }
