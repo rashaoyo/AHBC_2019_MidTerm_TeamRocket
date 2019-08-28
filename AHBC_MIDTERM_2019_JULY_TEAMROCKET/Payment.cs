@@ -54,7 +54,7 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
         public void MethodOfPayment()
         {
 
-
+            Console.Clear();
             Console.WriteLine("Please selece a method of payment (enter in number): " +
                 "\n [1.] Credit Card" +
                 "\n [2.] Cash" +
