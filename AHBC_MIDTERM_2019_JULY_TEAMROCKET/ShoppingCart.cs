@@ -37,13 +37,14 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
         }
 
 
-        private void calculateSubtotal(List<StoreItem> cartList)
+        public double calculateSubtotal(List<StoreItem> cartList)
         {
             foreach (var item in cartList)
             {
-                cartValue += item.ItemPrice * item.ItemQuantity;
+                cartValue += (item.ItemPrice * item.ItemQuantity);
 
             }
+            return cartValue;
         }
 
         //public void changeCurrentSock(List<StoreItem> currentStock)
