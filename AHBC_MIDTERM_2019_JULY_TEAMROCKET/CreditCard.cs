@@ -37,16 +37,16 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
                 {
                     if (result == CardTypes.VISA | result == CardTypes.MASTER | result == CardTypes.DISC)
                     {
-                        Console.WriteLine("\nCard:");
-                        string cardNum = ValidateCardNumber1(Console.ReadLine());
+                        Console.WriteLine("\nPlease enter the credit card number(no dashes or spaces): ");
+                         CardNumber = ValidateCardNumber1(Console.ReadLine());
 
 
                         Console.WriteLine("\nExpiration Date (MM/YY) or (MM/YYYY):");
-                        string expDate = ValidateExpDate(Console.ReadLine());
+                         ExpirationDate = ValidateExpDate(Console.ReadLine());
 
 
                         Console.WriteLine("\nCVV:");
-                        string cvvNum = ValidateCVVCode1(Console.ReadLine());
+                        CVVCode = ValidateCVVCode1(Console.ReadLine());
 
 
                         Console.WriteLine("Your transaction has been processed.");
@@ -57,16 +57,16 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
                     else if (result == CardTypes.AMEX)
                     {
 
-                        Console.WriteLine("\nCard:");
-                        string cardNum = ValidateCardNumber2(Console.ReadLine());
+                        Console.WriteLine("\nPlease enter the credit card number(no dashes or spaces): ");
+                        CardNumber = ValidateCardNumber2(Console.ReadLine());
 
 
                         Console.WriteLine("\nExpiration Date (MM/YY) or (MM/YYYY):");
-                        string expDate = ValidateExpDate(Console.ReadLine());
+                        ExpirationDate = ValidateExpDate(Console.ReadLine());
 
 
                         Console.WriteLine("\nCVV:");
-                        string cvvNum = ValidateCVVCode2(Console.ReadLine());
+                        CVVCode = ValidateCVVCode2(Console.ReadLine());
 
 
                         Console.WriteLine("Your transaction has been processed.");
@@ -207,7 +207,14 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
                 return cardNum;
 
             }
+            
 
+        }
+        public void printCardInfo()
+        {
+            Console.WriteLine($"Cardnumber: {CardNumber}");
+            Console.WriteLine($"Experation Date: {ExpirationDate}");
+            Console.WriteLine($"CVV code: {CVVCode}");
         }
     }
 }

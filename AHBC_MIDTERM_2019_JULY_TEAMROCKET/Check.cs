@@ -17,13 +17,19 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
             Console.WriteLine($"Total: {total}\n"); //might not need based on how user interface is set up
 
             Console.WriteLine("Check Number:\n");     //validation
-            string checkNum = ValidateCheckNumber(Console.ReadLine());
+            AccountNumber = ValidateCheckNumber(Console.ReadLine());
 
             Console.WriteLine("Routing Number:\n");     //validation
-            string routeNum = ValidateRouteNumber(Console.ReadLine());
+            RoutingNumber = ValidateRouteNumber(Console.ReadLine());
 
             Console.WriteLine("Your transaction has been processed.");
 
+        }
+        public void PrintCheckInfo()
+        {
+            Console.WriteLine("Thank you for the check payment");
+            Console.WriteLine($"Check Account Number: {AccountNumber}");
+            Console.WriteLine($"Check Routing Number: {RoutingNumber}");
         }
 
         private string ValidateRouteNumber(string routeNum)

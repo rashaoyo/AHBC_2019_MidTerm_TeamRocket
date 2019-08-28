@@ -6,16 +6,23 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
 {
     public class Cash : IPaymentMethod
     {
+        double cashGiven, change;
         public void Pay(double total)
         {
-            double cashGiven, change;
+            
 
-            Console.WriteLine($"Your total is: {total}, Please enter how much cash you will be giving: ");
-            cashGiven = CashReceived();
+            //Console.WriteLine($"Your total is: {total}, Please enter how much cash you will be giving: ");
+            //cashGiven = CashReceived();
             
             while (cashGiven < total)
             {
-                Console.WriteLine("I apologize, however the funds provided are insufficient.");
+                Console.WriteLine($"Your total is: {total}, Please enter how much cash you will be giving: ");
+                cashGiven = CashReceived();
+
+                if (cashGiven < total)
+                {
+                    Console.WriteLine("I apologize, however the funds provided are insufficient.");
+                }
             }
             if (cashGiven >= total)
             {
@@ -37,9 +44,11 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
             }
         }
 
-        public void Pay(string total)
+        public void PrintCashInfo()
         {
-
+            Console.WriteLine("Thank you for your cash payment");
+            Console.WriteLine($"Cash given: {cashGiven}");
+            Console.WriteLine($"Change: {change}");
         }
 
 

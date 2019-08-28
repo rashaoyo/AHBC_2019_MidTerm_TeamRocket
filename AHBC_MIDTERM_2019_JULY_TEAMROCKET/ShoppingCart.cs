@@ -32,7 +32,7 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
                 ItemstoPurchase.Add(item);
             }
             cartValue = 0;
-            calculateSubtotal(ItemstoPurchase);
+            //calculateSubtotal(ItemstoPurchase);
 
         }
 
@@ -85,6 +85,7 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
             foreach (var item in ItemstoPurchase)
             {
                 Console.WriteLine($"{i}. {item.NameOfItem} - {item.ItemQuantity} x {item.ItemPrice} = {item.ItemPrice*item.ItemQuantity}");
+                i++;
             }
             Console.WriteLine();
         }
