@@ -37,7 +37,7 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
                 {
                     if (result == CardTypes.VISA | result == CardTypes.MASTER | result == CardTypes.DISC)
                     {
-                        Console.WriteLine("\nCard:");
+                        Console.WriteLine("\nPlease enter the credit card number(no dashes or spaces): ");
                          CardNumber = ValidateCardNumber1(Console.ReadLine());
 
 
@@ -57,7 +57,7 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
                     else if (result == CardTypes.AMEX)
                     {
 
-                        Console.WriteLine("\nCard:");
+                        Console.WriteLine("\nPlease enter the credit card number(no dashes or spaces): ");
                         CardNumber = ValidateCardNumber2(Console.ReadLine());
 
 

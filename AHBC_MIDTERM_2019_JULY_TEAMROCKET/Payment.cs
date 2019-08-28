@@ -4,14 +4,11 @@ using System.Text;
 
 namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
 {
-    public class Payment : IPaymentMethod
+    public class Payment /*: IPaymentMethod*/
     {
         public double SubTotal { get; set; }
         public double SalesTaxTotal { get; set; }
         public double GrandTotal { get; set; }
-        //public object PaymentType { get; private set; }
-        public string Total { get; set; }
-
         public const double taxRate = 0.06;
         public ShoppingCart userShoppingCart = new ShoppingCart();
 
@@ -55,6 +52,13 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
         {
 
             Console.Clear();
+
+            Console.WriteLine("Thank you for your order fetching your total...");
+            Console.WriteLine($"Subtotal: ${SubTotal}");
+            Console.WriteLine($"Tax: ${SalesTaxTotal}");
+            Console.WriteLine($"Grand Total: ${GrandTotal}");
+            Console.WriteLine();
+
             Console.WriteLine("Please selece a method of payment (enter in number): " +
                 "\n [1.] Credit Card" +
                 "\n [2.] Cash" +
@@ -108,15 +112,6 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
 
         }
 
-        //public double AddingTaxRate()
-        //{
-        //** if we decide to do non-taxable items.. maybe rename this method??
-        //}
-
-
-        public interface IPayment
-        {
-
-        }
+        
     }
 }
