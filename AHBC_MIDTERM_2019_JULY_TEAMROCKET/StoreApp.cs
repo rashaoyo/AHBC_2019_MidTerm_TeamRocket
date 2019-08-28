@@ -12,14 +12,15 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
         bool isValid;
         int startMenuChoice = 0;
         string initalUserInput = "";
-        
+        public ShoppingCart usersCart = new ShoppingCart();
+        StoreInventory inventoryPull = new StoreInventory();
 
 
 
 
-        public void Run()
+        public void RunStore()
         {
-
+            
             Console.WriteLine("Welcome to '@void', your number one stop for the latest in digiatl fashion! \nSelecet below from the following options:\n");
             Console.WriteLine("[1] Shop \n[2] About \n[3] Exit");
 
@@ -50,8 +51,10 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
                 switch (startMenuChoice)
                 {
                     case 1:
+                        Console.Clear();
+                        ShoppingMenu.RunShoppingMenu(inventoryPull ,usersCart);
 
-                        
+
                         break;
 
                     case 2:
@@ -86,7 +89,7 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
 
         }
 
-        public void menuOptions()
+        private void menuOptions()
         {
 
             Console.WriteLine("Please, selecet below from the following options:\n");

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Payments
+namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
 {
     public abstract class Payment : IPayment
     {
@@ -55,24 +55,24 @@ namespace Payments
         {
             while (true)
             {
-                PaymentType = paymentType;
-                switch (paymentType)
-                {
-                    case 1:
-                        PayWithCash();
-                        return;
+                //PaymentType = paymentType;
+                //switch (paymentType)
+                //{
+                //    case 1:
+                //        PayWithCash();
+                //        return;
 
-                    case 2:
-                        PayWithCheck();
-                        return;
+                //    case 2:
+                //        PayWithCheck();
+                //        return;
 
-                    case 3:
-                        PayWithCreditCard();
-                        return;
+                //    case 3:
+                //        PayWithCreditCard();
+                //        return;
 
-                    default:
-                        Console.WriteLine("I'm sorry but we do not accept this form of payment.");
-                        break;
+                //    default:
+                //        Console.WriteLine("I'm sorry but we do not accept this form of payment.");
+                //        break;
                 }
 
             }
@@ -82,7 +82,7 @@ namespace Payments
         //{
         //** if we decide to do non-taxable items.. maybe rename this method??
         //}
-    }
+    
 
     public interface IPayment
     {
