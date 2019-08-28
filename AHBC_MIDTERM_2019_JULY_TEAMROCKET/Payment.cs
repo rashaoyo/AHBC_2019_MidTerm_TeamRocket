@@ -50,6 +50,9 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
 
         public void MethodOfPayment()
         {
+
+            Console.Clear();
+
             Console.WriteLine("Thank you for your order fetching your total...");
             Console.WriteLine($"Subtotal: ${SubTotal}");
             Console.WriteLine($"Tax: ${SalesTaxTotal}");

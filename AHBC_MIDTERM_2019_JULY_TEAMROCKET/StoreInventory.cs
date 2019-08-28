@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
 namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
@@ -75,6 +76,42 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
         }
 
 
-    
+        public static void UpdateInventoryDatabase(StoreInventory currentInventory)
+        {
+            string newInventoryFileString="";
+            foreach (StoreItem item in currentInventory)
+            {
+
+                newInventoryFileString += item.NameOfItem +",";
+                newInventoryFileString += item.ItemQuantity +",";
+                newInventoryFileString += item.ItemPrice + ",";
+                newInventoryFileString += item.ItemCategory + System.Environment.NewLine;
+
+            }
+
+            File.WriteAllText("Items.txt", newInventoryFileString);
+        }
+
+
+        public static void ResetInventoryDatabase(StoreInventory currentInventory)
+        {
+            string newInventoryFileString = "";
+            foreach (StoreItem item in currentInventory)
+            {
+
+                newInventoryFileString += item.NameOfItem + ",";
+                newInventoryFileString += "25,";
+                newInventoryFileString += item.ItemPrice + ",";
+                newInventoryFileString += item.ItemCategory + System.Environment.NewLine;
+
+            }
+
+            File.WriteAllText("Items.txt", newInventoryFileString);
+        }
+
+
+
+
+
     }
 }

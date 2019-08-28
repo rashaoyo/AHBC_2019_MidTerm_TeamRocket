@@ -9,10 +9,14 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
         double cashGiven, change;
         public void Pay(double total)
         {
-            
+
+            Console.Clear();
+            Console.WriteLine($"Your total is: {total}, Please enter how much cash you will be giving: ");
+            cashGiven = CashReceived();
 
             //Console.WriteLine($"Your total is: {total}, Please enter how much cash you will be giving: ");
             //cashGiven = CashReceived();
+
             
             while (cashGiven < total)
             {
@@ -26,9 +30,10 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
             }
             if (cashGiven >= total)
             {
+                Console.Clear();
                 change = cashGiven - total;
                 Console.WriteLine($"Total Change: " + change);
-                Console.ReadKey();
+               
             }
         }
 

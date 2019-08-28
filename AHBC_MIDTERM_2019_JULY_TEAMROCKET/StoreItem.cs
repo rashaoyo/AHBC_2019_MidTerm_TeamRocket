@@ -14,6 +14,8 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
         public int ItemQuantity { get; set; }
         public double ItemPrice { get; set; }
 
+         
+
         
         //function to read text file
         public List<string> FileReader() //returns entire file in a list
@@ -65,6 +67,8 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
             return itemCreator;
         }
 
-       
+
+
+
     }
 }
