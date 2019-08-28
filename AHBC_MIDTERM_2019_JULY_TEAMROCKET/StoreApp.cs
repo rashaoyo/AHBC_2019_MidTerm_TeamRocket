@@ -52,9 +52,13 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
                 {
                     case 1:
                         Console.Clear();
-                        ShoppingMenu.RunShoppingMenu(inventoryPull ,usersCart);
-
-
+                        ShoppingMenu.RunShoppingMenu(inventoryPull, usersCart);
+                        double userSubTotal = usersCart.calculateSubtotal(usersCart.ItemstoPurchase);
+                        Payment userPayment = new Payment(userSubTotal);
+                        userPayment.CalculatedSalesTaxTotal();
+                        userPayment.CalculatedGrandTotal();
+                        userPayment.MethodOfPayment();
+                        
                         break;
 
                     case 2:

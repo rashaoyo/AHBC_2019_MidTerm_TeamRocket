@@ -12,7 +12,7 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
         public string RoutingNumber { get; set; }
 
 
-        public new void Pay(string total)
+        public void Pay(double total)
         {
             Console.WriteLine($"Total: {total}\n"); //might not need based on how user interface is set up
 
