@@ -9,10 +9,11 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
         public double SubTotal { get; set; }
         public double SalesTaxTotal { get; set; }
         public double GrandTotal { get; set; }
-        public object PaymentType { get; private set; }
+        //public object PaymentType { get; private set; }
         public string Total { get; set; }
 
         public const double taxRate = 0.06;
+        public ShoppingCart userShoppingCart = new ShoppingCart();
 
         public enum PaymentSelection
         {
@@ -27,9 +28,11 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
 
         }
 
-        public Payment(double subtotalFromShoppingcart)
+        public Payment(double subtotalFromShoppingcart, ShoppingCart shoppingCart)
         {
             SubTotal = subtotalFromShoppingcart;
+            userShoppingCart.ItemstoPurchase = shoppingCart.ItemstoPurchase;
+            
         }
 
 
@@ -68,16 +71,27 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
                         case PaymentSelection.CreditCard:
                             CreditCard userCreditCard = new CreditCard();
                             userCreditCard.Pay(GrandTotal);
+                            Receipt userReceipt = new Receipt(GrandTotal, SubTotal, userShoppingCart.ItemstoPurchase);
+                            userReceipt.PrintReceipt();
+                            Console.WriteLine("Thank you for your payment from the following credit card");
+                            Console.WriteLine("Payment is processed and approved");
+                            userCreditCard.printCardInfo();
                             return;
 
                         case PaymentSelection.Cash:
                             Cash userCash = new Cash();
                             userCash.Pay(GrandTotal);
+                            Receipt cashUserReceipt = new Receipt(GrandTotal, SubTotal, userShoppingCart.ItemstoPurchase);
+                            cashUserReceipt.PrintReceipt();
+                            userCash.PrintCashInfo();
                             return;
 
                         case PaymentSelection.Check:
                             Check userCheck = new Check();
                             userCheck.Pay(GrandTotal);
+                            Receipt checkUserReceipt = new Receipt(GrandTotal, SubTotal, userShoppingCart.ItemstoPurchase);
+                            checkUserReceipt.PrintReceipt();
+                            userCheck.PrintCheckInfo();
                             return;
 
                         default:

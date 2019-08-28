@@ -6,9 +6,10 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
 {
     public class Cash : IPaymentMethod
     {
+        double cashGiven, change;
         public void Pay(double total)
         {
-            double cashGiven, change;
+            
 
             Console.WriteLine($"Your total is: {total}, Please enter how much cash you will be giving: ");
             cashGiven = CashReceived();
@@ -37,9 +38,11 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
             }
         }
 
-        public void Pay(string total)
+        public void PrintCashInfo()
         {
-
+            Console.WriteLine("Thank you for your cash payment");
+            Console.WriteLine($"Cash given: {cashGiven}");
+            Console.WriteLine($"Change: {change}");
         }
 
 
