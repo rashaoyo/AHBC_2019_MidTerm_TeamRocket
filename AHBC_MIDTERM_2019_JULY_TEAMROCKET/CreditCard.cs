@@ -136,7 +136,8 @@ namespace AHBC_MIDTERM_2019_JULY_TEAMROCKET
 
         private string ValidateExpDate(string expDate)
         {
-            Regex rgx = new Regex(@"^(\w[0-9]{1})\/(\w[0-9]{1})$|^(\w[0-9]{1})\/(\w[0-9]{3})$");
+            //Regex rgx = new Regex(@"^(\w[0-9]{1})\/(\w[0-9]{1})$|^(\w[0-9]{1})\/(\w[0-9]{3})$");
+            Regex rgx = new Regex(@"^(1[0-2]|0[1-9]|\d)\/([2-9]\d[1-9]\d|[1-9]\d)$");
 
             if (rgx.IsMatch(expDate))
             {
